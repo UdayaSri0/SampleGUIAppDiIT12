@@ -76,5 +76,18 @@ namespace SampleGUIAppDiIT12
             txtPassword.Clear();
             txtUsername.Focus();  // Set focus back to the username field
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtUsername.UseSystemPasswordChar = true;
+            }
+
+        }
     }
 }
