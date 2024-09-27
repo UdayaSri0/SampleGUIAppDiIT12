@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridViewUserData = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtAccountName = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.txtAccountName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewUserData = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.txtUpdate = new System.Windows.Forms.Button();
             this.txtDelete = new System.Windows.Forms.Button();
@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUserData)).BeginInit();
             this.SuspendLayout();
@@ -57,23 +59,16 @@
             this.panel1.Size = new System.Drawing.Size(200, 452);
             this.panel1.TabIndex = 3;
             // 
-            // dataGridViewUserData
+            // btnLogOut
             // 
-            this.dataGridViewUserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUserData.Location = new System.Drawing.Point(326, 132);
-            this.dataGridViewUserData.Name = "dataGridViewUserData";
-            this.dataGridViewUserData.Size = new System.Drawing.Size(420, 228);
-            this.dataGridViewUserData.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.label1.Location = new System.Drawing.Point(41, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Welcome";
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnLogOut.Location = new System.Drawing.Point(75, 405);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(108, 34);
+            this.btnLogOut.TabIndex = 6;
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
             // 
             // txtAccountName
             // 
@@ -86,16 +81,23 @@
             this.txtAccountName.Text = "User account ";
             this.txtAccountName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnLogOut
+            // label1
             // 
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnLogOut.Location = new System.Drawing.Point(75, 405);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(108, 34);
-            this.btnLogOut.TabIndex = 6;
-            this.btnLogOut.Text = "Log out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label1.Location = new System.Drawing.Point(41, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Welcome";
+            // 
+            // dataGridViewUserData
+            // 
+            this.dataGridViewUserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUserData.Location = new System.Drawing.Point(308, 179);
+            this.dataGridViewUserData.Name = "dataGridViewUserData";
+            this.dataGridViewUserData.Size = new System.Drawing.Size(457, 181);
+            this.dataGridViewUserData.TabIndex = 2;
             // 
             // btnInsert
             // 
@@ -188,12 +190,33 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // cmbRole
+            // 
+            this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Location = new System.Drawing.Point(423, 127);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(209, 28);
+            this.cmbRole.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label4.Location = new System.Drawing.Point(286, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 25);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Role";
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -231,5 +254,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.Label label4;
     }
 }

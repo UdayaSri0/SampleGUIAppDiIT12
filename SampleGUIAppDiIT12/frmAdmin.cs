@@ -20,6 +20,14 @@ namespace SampleGUIAppDiIT12
             InitializeComponent();
             LoadUserData();  // Load data when the form opens
             txtAccountName.Text = "Logged in as Admin";  // Example display for logged-in admin
+
+            // Populate the role ComboBox with 'Admin' and 'User' roles
+            cmbRole.Items.Add("User");
+            cmbRole.Items.Add("Admin");
+
+            // Optionally, set a default selected value (e.g., select "Admin" by default)
+            cmbRole.SelectedIndex = 0;  // Select the first item in the list
+
         }
 
         // Method to load user data into DataGridView
@@ -54,11 +62,13 @@ namespace SampleGUIAppDiIT12
         {
             if (dataGridViewUserData.SelectedRows.Count > 0)
             {
+                // Get selected user ID from the DataGridView
                 int userID = Convert.ToInt32(dataGridViewUserData.SelectedRows[0].Cells["UserID"].Value);
                 string username = txtUsername.Text;
                 string password = txtPassword.Text;
+                string role = cmbRole.SelectedItem.ToString();  // Get the selected role from the ComboBox
 
-                if (db.UpdateUser(userID, username, password))
+                if (db.UpdateUser(userID, username, password, role))
                 {
                     MessageBox.Show("User updated successfully!");
                     LoadUserData();  // Refresh the DataGridView after update
