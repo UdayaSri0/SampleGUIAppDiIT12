@@ -34,7 +34,7 @@ Installation
 Follow these steps to set up the project on your local machine:
 
 Clone the repository
-git clone https://github.com/UdayaSri0/repository-name.git
+git clone (https://github.com/UdayaSri0/SampleGUIAppDiIT12)
 
 Navigate to the project directory
 cd repository-name
