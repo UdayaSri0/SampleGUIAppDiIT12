@@ -92,18 +92,19 @@ namespace SampleGUIAppDiIT12
         }
 
         // Method to update an existing user
-        public bool UpdateUser(int userID, string username, string password)
+        public bool UpdateUser(int userID, string username, string password, string role)
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Users SET Username = @Username, Password = @Password WHERE UserID = @UserID";
+                    string query = "UPDATE Users SET Username = @Username, Password = @Password, Role = @Role WHERE UserID = @UserID";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@UserID", userID);
                         cmd.Parameters.AddWithValue("@Username", username);
                         cmd.Parameters.AddWithValue("@Password", password);
+                        cmd.Parameters.AddWithValue("@Role", role);  // Update the role
 
                         con.Open();
                         return cmd.ExecuteNonQuery() > 0;

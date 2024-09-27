@@ -49,46 +49,6 @@ namespace SampleGUIAppDiIT12
             }
         }
 
-        // Delete Button Click Event
-        private void txtDelete_Click(object sender, EventArgs e)
-        {
-            if (dataGridViewUserData.SelectedRows.Count > 0)
-            {
-                int userID = Convert.ToInt32(dataGridViewUserData.SelectedRows[0].Cells["UserID"].Value);
-
-                if (db.DeleteUser(userID))
-                {
-                    MessageBox.Show("User deleted successfully!");
-                    LoadUserData();  // Refresh the DataGridView after deletion
-                }
-                else
-                {
-                    MessageBox.Show("Failed to delete user.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select a user to delete.");
-            }
-        }
-
-        // Search Button Click Event
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string username = txtUsername.Text;
-
-            DataTable dt = db.SearchUser(username);
-            dataGridViewUserData.DataSource = dt;  // Set the filtered data as the new data source
-        }
-
-        // Logout Button Click Event
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 loginForm = new Form1();
-            loginForm.Show();
-        }
-
         // Update Button Click Event
         private void txtUpdate_Click_1(object sender, EventArgs e)
         {
@@ -113,6 +73,53 @@ namespace SampleGUIAppDiIT12
                 MessageBox.Show("Please select a user to update.");
             }
 
+        }
+
+        // Delete Button Click Event
+        private void txtDelete_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridViewUserData.SelectedRows.Count > 0)
+            {
+                int userID = Convert.ToInt32(dataGridViewUserData.SelectedRows[0].Cells["UserID"].Value);
+
+                if (db.DeleteUser(userID))
+                {
+                    MessageBox.Show("User deleted successfully!");
+                    LoadUserData();  // Refresh the DataGridView after deletion
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete user.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a user to delete.");
+            }
+        }
+
+        // Search Button Click Event
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+
+            DataTable dt = db.SearchUser(username);
+            dataGridViewUserData.DataSource = dt;  // Set the filtered data as the new data source
+        }
+
+        // Logout Button Click Event
+        private void btnLogOut_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 loginForm = new Form1();
+            loginForm.Show();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            // Reload data into DataGridView
+            LoadUserData();
+            MessageBox.Show("Data refreshed successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

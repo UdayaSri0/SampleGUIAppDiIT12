@@ -41,6 +41,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUserData)).BeginInit();
             this.SuspendLayout();
@@ -77,10 +78,10 @@
             // txtAccountName
             // 
             this.txtAccountName.AutoSize = true;
-            this.txtAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.txtAccountName.Location = new System.Drawing.Point(26, 77);
+            this.txtAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountName.Location = new System.Drawing.Point(43, 77);
             this.txtAccountName.Name = "txtAccountName";
-            this.txtAccountName.Size = new System.Drawing.Size(145, 25);
+            this.txtAccountName.Size = new System.Drawing.Size(89, 16);
             this.txtAccountName.TabIndex = 5;
             this.txtAccountName.Text = "User account ";
             this.txtAccountName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,6 +95,7 @@
             this.btnLogOut.TabIndex = 6;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
             // 
             // btnInsert
             // 
@@ -126,6 +128,7 @@
             this.txtDelete.TabIndex = 9;
             this.txtDelete.Text = "Delete";
             this.txtDelete.UseVisualStyleBackColor = true;
+            this.txtDelete.Click += new System.EventHandler(this.txtDelete_Click_1);
             // 
             // btnSearch
             // 
@@ -136,6 +139,7 @@
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // txtUsername
             // 
@@ -173,12 +177,24 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Password";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnRefresh.Location = new System.Drawing.Point(684, 79);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(108, 34);
+            this.btnRefresh.TabIndex = 14;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
@@ -214,5 +230,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
