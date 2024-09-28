@@ -229,6 +229,7 @@
             this.Controls.Add(this.dataGridViewUserData);
             this.Controls.Add(this.btnInsert);
             this.Name = "frmAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdmin";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

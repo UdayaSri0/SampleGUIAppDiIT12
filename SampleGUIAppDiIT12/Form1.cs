@@ -85,8 +85,13 @@ namespace SampleGUIAppDiIT12
             }
             else
             {
-                txtUsername.UseSystemPasswordChar = true;
+                txtPassword.UseSystemPasswordChar = true;
             }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }
